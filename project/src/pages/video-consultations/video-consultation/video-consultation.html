@@ -1,0 +1,81 @@
+<ion-header>
+  <ion-navbar color="secondary">
+    <ion-row>
+      <ion-col col-auto>
+        <img style="width: 40px" src="assets/icon/daktar_online.png">
+      </ion-col>
+      <ion-col>
+        <ion-title>{{ 'Video Consultation' | translate }}</ion-title>
+      </ion-col>
+    </ion-row>
+
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-list>
+    <button ion-item>
+      <ion-icon name="md-disc" item-start color="primary"></ion-icon>
+      <ion-label text-wrap color="dark_light">Speciality</ion-label>
+      <ion-select [(ngModel)]="speciality" interface="popover">
+        <ion-option value="f">Allergist/Immonologist</ion-option>
+        <ion-option value="m">Bariatic Sergon</ion-option>
+      </ion-select>
+    </button>
+
+    <button ion-item>
+      <ion-icon name="md-disc" item-start color="primary"></ion-icon>
+      <ion-label text-wrap color="dark_light">Prefered Language</ion-label>
+      <ion-select [(ngModel)]="language" interface="popover">
+        <ion-option value="f">Bangla</ion-option>
+        <ion-option value="m">Hindi</ion-option>
+        <ion-option value="ee">English</ion-option>
+      </ion-select>
+    </button>
+
+
+    <button color="primary" ion-item no-lines (click)="consultationSearch()">
+      <ion-label text-center color="white">SEARCH</ion-label>
+    </button>
+
+
+  </ion-list>
+
+
+  <ion-list>
+    <ion-list-header no-margin>Popular Search</ion-list-header>
+    <button ion-item (click)="consultationSearch()">
+      <ion-label text-wrap color="dark_light">Cardiologist</ion-label>
+    </button>
+    <button ion-item (click)="consultationSearch()">
+      <ion-label text-wrap color="dark_light">Sexologist</ion-label>
+    </button>
+    <button ion-item (click)="consultationSearch()">
+      <ion-label text-wrap color="dark_light">Diabetologist</ion-label>
+    </button>
+
+    <button ion-item (click)="consultationSearch()">
+      <ion-label text-wrap color="dark_light">Psychiatrist</ion-label>
+    </button>
+
+    <button ion-item (click)="consultationSearch()">
+      <ion-label text-wrap color="dark_light">Dermatologist</ion-label>
+    </button>
+
+    <button ion-item (click)="consultationSearch()">
+      <ion-label text-wrap color="dark_light">Bariatric Surgeon</ion-label>
+    </button>
+
+
+  </ion-list>
+
+
+  <ion-fab bottom right>
+    <button ion-fab icon-only (click)="liveSupportOnClick()">
+      <ion-icon name="md-chatbubbles"></ion-icon>
+    </button>
+  </ion-fab>
+
+
+</ion-content>

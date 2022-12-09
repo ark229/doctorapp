@@ -1,0 +1,135 @@
+<ion-content>
+
+
+  <ion-grid padding>
+
+
+    <ion-row class="row-img" margin-top><img class="top-icon" src="assets/icon/daktar_online.png"></ion-row>
+    <ion-row class="row-title" margin-bottom><h2 class="top-title">{{'Sign in with Daktar Online' | translate}}</h2>
+    </ion-row>
+
+
+    <ion-row class="row-form">
+
+
+      <form [formGroup]="form" novalidate class="form-login">
+
+        <div class="div-input">
+
+          <ion-row class="row-mobile" no-padding>
+            <ion-col no-padding col-2 text-center align-self-center class="country_code">
+              <ion-icon name="ios-mail-outline" class="icon-email" color="secondary"></ion-icon>
+            </ion-col>
+
+            <ion-col no-padding col-10 class="col-mobile">
+              <ion-item no-lines no-padding>
+                <ion-input formControlName="username"
+                           name="username"
+                           type="text" spellcheck="false"
+                           autocapitalize="off"
+                           maxlength="40"
+                           placeholder="Enter email"
+                           clearInput clearOnEdit="false">
+
+                </ion-input>
+              </ion-item>
+
+            </ion-col>
+          </ion-row>
+
+
+        </div>
+
+
+        <div class="div-input">
+          <ion-row class="row-mobile" no-padding>
+            <ion-col no-padding col-2 text-center align-self-center class="country_code">
+              <ion-icon name="ios-lock-outline" class="icon-email" color="secondary"></ion-icon>
+            </ion-col>
+
+            <ion-col no-padding col-8 class="col-mobile">
+              <ion-item no-padding no-lines>
+                <ion-input #password formControlName="password"
+                           name="password" clearInput
+                           clearOnEdit="false"
+                           spellcheck="false"
+                           [type]="getType()"
+                           autocapitalize="off"
+                           maxlength="30"
+                           placeholder="Enter  password"
+                           [class.invalid]="!form.controls.password.valid && (submitted)">
+                </ion-input>
+
+              </ion-item>
+            </ion-col>
+            <ion-col no-padding col-2 text-center align-self-center class="row-mobile" (click)="toggleTextPassword()">
+              <ion-icon *ngIf="isShowPassword()" name="ios-eye-outline" class="icon-email" color="secondary"></ion-icon>
+              <ion-icon *ngIf="!isShowPassword()" name="ios-eye-off-outline" class="icon-email"
+                        color="secondary"></ion-icon>
+            </ion-col>
+          </ion-row>
+
+        </div>
+
+        <ion-label ion-text color="danger" padding-left
+                   *ngIf="!form.controls.password.valid && form.controls.password.dirty">
+          {{'ERROR_INVALID_PASSWORD' | translate}}
+        </ion-label>
+
+
+        <ion-row>
+          <ion-col text-center align-self-end>
+            <div>
+              <button ion-button color="white" clear text-uppercase (click)="forgotPassword()">{{ 'Forgot Password?' |
+                translate}}
+              </button>
+            </div>
+          </ion-col>
+        </ion-row>
+
+
+        <div padding-right padding-left class="btn-login">
+          <button (click)="validatePasswordAction()" ion-button block round icon-right type="submit" color="secondary">
+            {{'Login' | translate}}
+          </button>
+        </div>
+
+        <div padding-right padding-left class="btn-login" margin-top>
+          <button ion-button block round icon-right type="submit" (click)="registrationOnClick()" color="secondary">
+            {{'Register' | translate}}
+          </button>
+        </div>
+
+
+      </form>
+
+
+    </ion-row>
+
+    <ion-row>
+      <ion-col class="dash"></ion-col>
+      <ion-col text-center>
+        <ion-label color="white" no-margin margin-top>Or sign in with</ion-label>
+      </ion-col>
+      <ion-col class="dash"></ion-col>
+    </ion-row>
+
+    <ion-row class="row-social">
+      <ion-col>
+        <img class="img-social" src="assets/icon/facebook.svg">
+      </ion-col>
+      <ion-col>
+        <img class="img-social" src="assets/icon/google_plus.svg">
+      </ion-col>
+
+    </ion-row>
+
+    <ion-row padding>
+      <span class="terms-and-condition" [innerHtml]=termsAndConditions> </span>
+    </ion-row>
+
+
+  </ion-grid>
+
+
+</ion-content>

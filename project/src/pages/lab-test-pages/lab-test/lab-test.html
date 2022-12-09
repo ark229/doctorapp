@@ -1,0 +1,97 @@
+<ion-header no-border>
+  <ion-navbar color="secondary">
+    <ion-title>{{ 'Lab Test' | translate }}</ion-title>
+
+    <ion-buttons end>
+      <button ion-button icon-only (click)="openCartPage()">
+        <ion-icon color="white" name="md-cart"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid padding>
+
+
+    <ion-row class="row-img" margin-top><img class="top-icon" src="assets/icon/lab_test.svg"></ion-row>
+    <ion-row class="row-title" margin-bottom>
+      <ion-col text-center>
+        <p class="top-title">{{'Enter your area pin code to get nearby lab.' | translate}}</p>
+      </ion-col>
+    </ion-row>
+
+
+    <ion-row class="row-form">
+
+
+      <form [formGroup]="form" novalidate class="form-login">
+
+        <div class="div-input">
+
+          <ion-row class="row-mobile" no-padding>
+            <ion-col no-padding col-2 text-center align-self-center class="country_code">
+              <ion-icon name="md-home" class="icon-email" color="secondary"></ion-icon>
+            </ion-col>
+
+            <ion-col no-padding col-10 class="col-mobile">
+              <ion-item no-lines no-padding>
+                <ion-input formControlName="pincode"
+                           name="pincode"
+                           type="text" spellcheck="false"
+                           autocapitalize="off"
+                           maxlength="40"
+                           placeholder="Enter Area Pin code"
+                           clearInput clearOnEdit="false">
+
+                </ion-input>
+              </ion-item>
+
+            </ion-col>
+          </ion-row>
+
+
+        </div>
+
+        <div class="div-input">
+
+          <ion-row class="row-mobile" no-padding>
+            <ion-col no-padding col-2 text-center align-self-center class="country_code">
+              <ion-icon name="md-flask" class="icon-email" color="secondary"></ion-icon>
+            </ion-col>
+
+            <ion-col no-padding col-10 class="col-mobile">
+              <ion-item no-lines no-padding>
+                <ion-input formControlName="lab_test"
+                           name="lab_test"
+                           type="text" spellcheck="false"
+                           autocapitalize="off"
+                           maxlength="40"
+                           placeholder="Enter Test Name"
+                           clearInput clearOnEdit="false">
+
+                </ion-input>
+              </ion-item>
+
+            </ion-col>
+          </ion-row>
+
+
+        </div>
+
+
+        <div padding-right padding-left class="btn-forgot">
+          <button (click)="validatePasswordAction()" ion-button block round icon-right type="submit" color="secondary">
+            {{'Submit' | translate}}
+          </button>
+        </div>
+
+
+      </form>
+
+
+    </ion-row>
+
+
+  </ion-grid>
+</ion-content>

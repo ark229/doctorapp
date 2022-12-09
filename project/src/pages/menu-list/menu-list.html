@@ -1,0 +1,11 @@
+<ion-content>
+  <ion-list>
+    <button ion-item *ngFor="let menu of menus">
+      <ion-icon [name]="menu.icon" item-start color="primary"></ion-icon>
+      <ion-label text-wrap color="dark_light">{{menu.text}}</ion-label>
+      <ion-icon *ngIf="menu.forwardIcon" item-end name="ios-arrow-forward-outline" color="dark_light"></ion-icon>
+    </button>
+  </ion-list>
+
+
+</ion-content>
